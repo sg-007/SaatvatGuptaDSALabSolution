@@ -70,16 +70,6 @@ public class SumPair {
 			System.out.println("Pairs do not exist" + "\n");
 	}
 	
-	static void Inorder(Node root) {
-		if (root == null)
-			return;
-		else {
-			Inorder(root.leftNode);
-			System.out.print(root.nodeData + " ");
-			Inorder(root.rightNode);
-		}
-	}
-	
 	public static void main(String[] args) {
 
 		Node root = null;
@@ -92,7 +82,7 @@ public class SumPair {
 		sp.insert(root, 50);
 		sp.insert(root, 70);
 		
-		int sum = 80;
+		int sum = 35;
 		sp.findPairSum(root, sum);
 	}
 
