@@ -42,7 +42,11 @@ public class BalancingBrackets {
 	public static void main(String[] args) {
 		
 		String brackets = "([[{}]])";
-		Boolean result;
+		Boolean result = checkingBalanced(brackets);
+		if (result)
+			System.out.println("The entered string has balanced brackets");
+		else
+			System.out.println("The entered string does not have balanced brackets");
 	}
 
 }
