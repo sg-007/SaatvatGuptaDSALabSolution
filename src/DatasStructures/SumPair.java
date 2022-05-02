@@ -22,7 +22,7 @@ public class SumPair {
 
 		Node newnode = newNode(key);
 		Node x = root;
-		Node y = null; // y maintains pointer to x
+		Node y = null;
 
 		while (x != null) {
 			y = x;
@@ -36,19 +36,15 @@ public class SumPair {
 			}
 		}
 
-		// If the root is null, the tree is empty.
 		if (y == null)
 			y = newnode;
 
-		// assign the new node to the left child
 		else if (key < y.nodeData)
 			y.leftNode = newnode;
 
-		// assign the new node to the right child
 		else
 			y.rightNode = newnode;
 
-		// return pointer to new node
 		return y;
 	}
 
@@ -74,19 +70,29 @@ public class SumPair {
 			System.out.println("Pairs do not exist" + "\n");
 	}
 	
+	static void Inorder(Node root) {
+		if (root == null)
+			return;
+		else {
+			Inorder(root.leftNode);
+			System.out.print(root.nodeData + " ");
+			Inorder(root.rightNode);
+		}
+	}
+	
 	public static void main(String[] args) {
 
 		Node root = null;
 		SumPair sp = new SumPair();
 		root = sp.insert(root, 40);
-		root = sp.insert(root, 20);
-		root = sp.insert(root, 60);
-		root = sp.insert(root, 10);
-		root = sp.insert(root, 30);
-		root = sp.insert(root, 50);
-		root = sp.insert(root, 70);
+		sp.insert(root, 20);
+		sp.insert(root, 60);
+		sp.insert(root, 10);
+		sp.insert(root, 30);
+		sp.insert(root, 50);
+		sp.insert(root, 70);
 		
-		int sum = 130;
+		int sum = 80;
 		sp.findPairSum(root, sum);
 	}
 
